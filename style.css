@@ -1,0 +1,253 @@
+:root {
+  /* Color */
+  --white-color: #fff;
+  --black-color: #140a00;
+  --blue-color: #045fd4;
+  --red-color: #ff0000;
+  --darkgray-color: #909090;
+  --lightgray-color: #e0e0e0;
+
+  /* Size */
+  --padding: 12px;
+  --user-size: 36px;
+
+  /* Font Size */
+  --large-font: 18px;
+  --medium-font: 14px;
+  --small-font: 12px;
+  --micro-font: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* margin, padding 포함 */
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: var(--white-color);
+}
+
+/* 헤더 */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+header .logo {
+  font-size: var(--large-font);
+}
+
+header .logo i {
+  color: var(--red-color);
+}
+
+header .icons .fa-search {
+  margin-right: var(--padding);
+}
+
+/* 동영상 */
+.player {
+  text-align: center;
+  background-color: var(--black-color);
+  /* 스크롤링 해도 동영상이 상단에 고정되게 */
+  position: sticky;
+  top: 0;
+}
+
+.player video {
+  /* 화면에 알맞게 채우되 최대 width 지정 */
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+.infoAndNextVideo > .info {
+  padding: var(--padding);
+}
+
+/* 동영상 정보 */
+.info .data .hashtags {
+  display: flex;
+  color: var(--blue-color);
+  font-size: var(--small-font);
+}
+
+.info .data .hashtags li {
+  margin-right: var(--padding);
+}
+
+.info .data .titleandBtn {
+  display: flex;
+}
+
+.info .data .titleandBtn .title {
+  font-size: var(--medium-font);
+  margin-right: var(--padding);
+}
+
+.info .data .titleandBtn .title.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.info .data .titleandBtn .clicked {
+  transform: rotate(180deg);
+}
+
+.info .view {
+  font-size: var(--small-font);
+  color: var(--darkgray-color);
+  font-weight: bold;
+  margin-top: calc(var(--padding) / 2);
+}
+
+/* 동영상 버튼 */
+.info .actions {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--padding) 0;
+}
+
+.info .actions button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--small-font);
+  color: var(--darkgray-color);
+}
+
+.info .actions button i {
+  padding: calc(var(--padding) / 2);
+  font-size: var(--medium-font);
+}
+
+.info .actions button i.active {
+  color: var(--blue-color);
+}
+
+/* 채널 정보 */
+.user {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+  border-top: 1px solid var(--lightgray-color);
+}
+
+.user .userData {
+  display: flex;
+  align-items: center;
+}
+
+.user .userData .userPic {
+  border-radius: 50%;
+  width: var(--user-size);
+  margin-right: var(--padding);
+}
+
+.user .userData .userInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--medium-font);
+  color: var(--black-color);
+  font-weight: 500;
+}
+
+.user .userData .userSub {
+  font-size: var(--micro-font);
+  color: var(--darkgray-color);
+}
+
+.user .subscribe {
+  font-size: var(--medium-font);
+  color: var(--white-color);
+  width: 60px;
+  background-color: var(--lightgray-color);
+  border-radius: 50px;
+}
+
+.userDesc {
+  background-color: var(--lightgray-color);
+  border-radius: 10px;
+  padding: var(--padding);
+  margin: calc(var(--padding) / 2) 0;
+}
+
+/* 다음 동영상 목록 */
+
+.nextVideo {
+  padding: 0 var(--padding);
+}
+
+.nextVideo > .title {
+  font-size: var(--medium-font);
+  color: var(--darkgray-color);
+}
+
+.nextVideo .item {
+  display: flex;
+  margin-top: var(--padding);
+}
+
+.nextVideo .item .img {
+  flex: 1 1 35%;
+  margin-right: var(--padding);
+}
+
+.nextVideo .item .img img {
+  width: 100%;
+}
+
+.nextVideo .item .info {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.nextVideo .item .moreBtn {
+  flex: 1 1 5%;
+}
+
+.nextVideo .item .title {
+  font-size: var(--medium-font);
+  padding-bottom: var(--padding);
+}
+
+.nextVideo .item .userName {
+  font-size: var(--small-font);
+}
+
+.nextVideo .item .views {
+  font-size: var(--micro-font);
+}
+
+.nextVideo .item .moreBtn {
+  height: 100%;
+}
+
+.infoAndNextVideo {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 미디어 쿼리 */
+
+@media screen and (min-width: 768px) {
+  .infoAndNextVideo {
+    flex-direction: row;
+    margin: var(--padding) 0;
+  }
+}
