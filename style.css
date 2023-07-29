@@ -106,6 +106,7 @@ header .icons .fa-search {
 
 .info .data .titleandBtn .clicked {
   transform: rotate(180deg);
+  background-color: transparent;
 }
 
 .info .view {
